@@ -27,7 +27,7 @@ namespace UnitTest.Controller
             Assert.Equal(result.StatusCode, (int)HttpStatusCode.OK);
             Assert.Null(result.Value);
         }
-        
+
         [Fact]
         public void MoveSonda_Valid()
         {
