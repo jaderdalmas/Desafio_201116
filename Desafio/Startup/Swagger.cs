@@ -19,28 +19,6 @@ namespace Api.StartUp
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API" });
-
-                c.AddSecurityDefinition(AuthenticationSchemes.Basic.ToString(), new OpenApiSecurityScheme
-                {
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.Http,
-                    Scheme = AuthenticationSchemes.Basic.ToString(),
-                    In = ParameterLocation.Header,
-                    Description = "Basic Authorization header using the Bearer scheme."
-                });
-
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {{
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = AuthenticationSchemes.Basic.ToString()
-                        }
-                    },
-                    new string[] {}
-                }});
             });
         }
 
