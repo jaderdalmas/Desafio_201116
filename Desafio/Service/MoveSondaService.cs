@@ -1,5 +1,4 @@
-﻿using Desafio.Extension;
-using Desafio.Model;
+﻿using Desafio.Model;
 using Desafio.ViewModel;
 using System.Linq;
 
@@ -15,7 +14,7 @@ namespace Desafio.Service
 
             for (int i = 0; i < request.Sondas.Count(); i++)
             {
-                result.Positions.Add(MoveSonda(request.Sondas.ElementAt(i), request.Moves.ElementAt(i)));
+                result.Positions.Add(MoveSonda(request.Sondas.ElementAt(i), request.Moves.ElementAt(i), request.Limit));
             }
 
             return result;
@@ -31,11 +30,7 @@ namespace Desafio.Service
             foreach (var move in moves)
                 sonda.Move(move);
 
-            if (sonda.Position.IsInvalid() ||
-                sonda.Position.OutOfLimit(limit))
-                return "Invalid";
-
-            return sonda.ToString();
+            return sonda.ToString(limit);
         }
     }
 }
