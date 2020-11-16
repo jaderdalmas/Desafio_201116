@@ -27,9 +27,33 @@ namespace UnitTest.Controller
             Assert.Equal(result.StatusCode, (int)HttpStatusCode.OK);
             Assert.Null(result.Value);
         }
+        
+        [Fact]
+        public void MoveSonda_Valid()
+        {
+            // Arrange
+            var controller = new SondaController(new MoveSondaService());
+            var request = new MoveSondaRequest()
+            {
+                Sondas = new List<Sonda>() { new Sonda() },
+                Moves = new List<string>() { "RLM" },
+                Limit = new Position(1, 1)
+            };
+
+            // Act
+            var response = controller.Post(request);
+
+            // Assert
+            Assert.IsType<OkObjectResult>(response);
+            var result = response as OkObjectResult;
+            Assert.Equal(result.StatusCode, (int)HttpStatusCode.OK);
+            Assert.NotNull(result.Value);
+            var value = result.Value as MoveSondaResponse;
+            Assert.Equal("1 0 N", value.Positions[0]);
+        }
 
         [Fact]
-        public void MoveSonda()
+        public void MoveSonda_Invalid()
         {
             // Arrange
             var controller = new SondaController(new MoveSondaService());
