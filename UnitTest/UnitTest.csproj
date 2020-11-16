@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Desafio_201116\Desafio\Desafio.csproj" />
+    <ProjectReference Include="..\Desafio\Desafio.csproj" />
   </ItemGroup>
 
 </Project>
