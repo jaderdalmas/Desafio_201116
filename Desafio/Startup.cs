@@ -1,4 +1,5 @@
 using Api.StartUp;
+using Desafio.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -37,6 +38,8 @@ namespace Desafio
             services.AddCompression();
             services.AddHealthCheck();
             services.AddSwagger();
+
+            services.AddServices();
         }
 
         /// <summary>
