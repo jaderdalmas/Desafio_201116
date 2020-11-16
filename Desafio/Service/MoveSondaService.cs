@@ -11,8 +11,10 @@ namespace Desafio.Service
 
         public MoveSondaResponse MoveSonda(MoveSondaRequest request)
         {
-            var result = new MoveSondaResponse();
+            if (request.Sondas?.Any() != true || request.Moves?.Any() != true || request.Sondas?.Count() != request.Moves?.Count())
+                return null;
 
+            var result = new MoveSondaResponse();
             for (int i = 0; i < request.Sondas.Count(); i++)
             {
                 result.Positions.Add(MoveSonda(request.Sondas.ElementAt(i), request.Moves.ElementAt(i), request.Limit));
