@@ -1,4 +1,3 @@
-using Desafio.Extension;
 using Desafio.Model;
 using Desafio.Service;
 using Xunit;
