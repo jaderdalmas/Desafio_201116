@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Desafio.Service
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public class MoveSondaService : IMoveSondaService
     {
         public MoveSondaService() { }
@@ -33,4 +34,5 @@ namespace Desafio.Service
             return sonda.ToString(limit);
         }
     }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }

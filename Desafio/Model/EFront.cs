@@ -1,5 +1,8 @@
 ﻿namespace Desafio.Model
 {
+    /// <summary>
+    /// Enumerator of Front position
+    /// </summary>
     public enum EFront
     {
         /// <summary>

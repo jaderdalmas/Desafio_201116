@@ -2,8 +2,17 @@
 
 namespace Desafio.Extension
 {
+    /// <summary>
+    /// Efront Extension
+    /// </summary>
     public static class EFrontExtension
     {
+        /// <summary>
+        /// Move Efront
+        /// </summary>
+        /// <param name="front">Efront</param>
+        /// <param name="move">move</param>
+        /// <returns>efront moved</returns>
         public static EFront Move(this EFront front, char move)
         {
             var position = (int)front;

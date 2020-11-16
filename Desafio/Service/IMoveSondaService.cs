@@ -1,10 +1,11 @@
 ﻿using Desafio.Model;
 using Desafio.ViewModel;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Desafio.Service
 {
+    /// <summary>
+    /// Move Sonda Service Interface
+    /// </summary>
     public interface IMoveSondaService
     {
         /// <summary>
