@@ -1,4 +1,6 @@
-﻿namespace Desafio.Model
+﻿using Desafio.Extension;
+
+namespace Desafio.Model
 {
     public class Position
     {
@@ -32,10 +34,19 @@
             }
         }
 
-        public bool IsInvalid() => X < 0 && Y < 0;
+        public bool IsInvalid(Position limit = null) => X < 0 || Y < 0 || this.OutOfLimit(limit);
+
         public override string ToString()
         {
             if (IsInvalid())
+                return "Invalid";
+
+            return $"{X} {Y}";
+        }
+
+        public string ToString(Position limit)
+        {
+            if (IsInvalid(limit))
                 return "Invalid";
 
             return $"{X} {Y}";

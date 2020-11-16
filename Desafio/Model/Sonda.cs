@@ -23,6 +23,17 @@ namespace Desafio.Model
 
         public override string ToString()
         {
+            if (Position.IsInvalid())
+                return "Invalid";
+
+            return $"{Position} {Front}";
+        }
+
+        public string ToString(Position limit)
+        {
+            if (Position.IsInvalid(limit))
+                return "Invalid";
+
             return $"{Position} {Front}";
         }
     }
